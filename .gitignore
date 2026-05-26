@@ -1,0 +1,33 @@
+# .gitignore
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 项目特定
+.env
+data/md5_records.txt
+db/chroma_db/
+uploads/
+knowledge_data/
+*.log
+
+# 数据库
+*.db
+*.sqlite3
+
+# 系统文件
+.DS_Store
+Thumbs.db
