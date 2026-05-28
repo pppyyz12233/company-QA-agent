@@ -10,7 +10,6 @@
 [![DeepSeek](https://img.shields.io/badge/DeepSeek-API-orange.svg)](https://deepseek.com/)
 [![LangChain](https://img.shields.io/badge/LangChain-0.1+-red.svg)](https://www.langchain.com/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-
 基于 **RAG（检索增强生成）** 架构的企业内部制度智能问答助手。系统能够自动解析 PDF/Word 文档，构建知识库，并根据员工提问智能检索相关制度内容，生成准确回答。
 
 ## ✨ 核心功能
