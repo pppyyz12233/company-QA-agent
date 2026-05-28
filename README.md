@@ -1,8 +1,3 @@
-# 📝 企业制度智能问答系统 - README.md
-
-直接复制以下内容到你的 `rag-agent` 项目的 `README.md` 文件中：
-
-```markdown
 # 📚 企业制度智能问答系统
 
 [![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)
@@ -12,7 +7,6 @@
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 基于 **RAG（检索增强生成）** 架构的企业内部制度智能问答助手。系统能够自动解析 PDF/Word 文档，构建知识库，并根据员工提问智能检索相关制度内容，生成准确回答。
-
 ## ✨ 核心功能
 
 | 功能模块 | 说明 | 状态 |
