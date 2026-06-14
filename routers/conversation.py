@@ -93,7 +93,7 @@ async def rename_conversation(
         "message": "重命名成功",
         "data": {
             "id": response.id,
-            "title": response.title
+                "title": response.title
         }
     }
 

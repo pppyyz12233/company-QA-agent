@@ -5,7 +5,9 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from crud import message, conversation
 from utils import config
-from utils.handle_text import retrieve_context
+from utils.handle_text import retrieve_context, kb_service
+from utils.hybrid_retriever import optimized_retrieve
+
 
 #调用DeepSeek大模型
 def call_deepseek(messages: list):
@@ -50,14 +52,24 @@ async def get_or_create_conversation(
 #知识库检索
 async def retrieve_relevant_context(question: str):
      try:
-        docs = retrieve_context(question)
+        docs = optimized_retrieve(
+            query=question,
+            chroma_client=kb_service.chroma,
+        )
         context =  "\n\n".join(docs) if docs else "未找到相关制度"
         sources = docs if docs else []
 
         return context, sources
 
      except Exception:
-         return "未找到相关制度", []
+         print("优化检索失败，降级为原始检索")
+         try:
+             docs = retrieve_context(question)
+             context = "\n\n".join(docs) if docs else "未找到相关制度"
+             sources = docs if docs else []
+             return context, sources
+         except Exception:
+             return "未找到相关制度", []
 
 
 #构建提示词

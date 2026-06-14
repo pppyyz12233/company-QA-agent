@@ -1,13 +1,6 @@
 import hashlib
 import secrets
-from fastapi import Header, Depends, HTTPException
-from sqlalchemy.ext.asyncio import AsyncSession
-from starlette import status
 
-from crud import user as crud_user
-from stock.db import get_db
-
-#哈希加密
 def hash_password(password: str):
     if not password:
         raise ValueError("密码不能为空")

@@ -1,5 +1,5 @@
-from typing import Optional
-from pydantic import BaseModel, Field, ConfigDict
+
+from pydantic import BaseModel, Field
 
 
 class UserCreate(BaseModel):
@@ -9,10 +9,6 @@ class UserCreate(BaseModel):
 #更新用户信息
 class UserUpdateRequest(BaseModel):
     nickname: str =None
-    phone: str = None
-    avatar:str = None
-    gender:str = "unknow"
-    bio: str = None
 
 #更新密码
 class UserChangePasswordRequest(BaseModel):

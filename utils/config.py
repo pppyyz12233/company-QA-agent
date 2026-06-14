@@ -28,10 +28,23 @@ chunk_overlap = 100
 separators= ["\n\n", "\n", "。", "；", "，", " ", ""]
 max_splter_char_number = 1000
 
+#是否开启
+USE_QUERY_REWRITE = True
+USE_HYBRID_SEARCH = True
+USE_RERANK = True
 
 #md5存放路径
 md5_path=os.path.join(BASE_DIR, "data", "md5_records.txt")
 
-#回答问题数量
+#Cross-Encoder 模型配置
+cross_encoder_model = "cross-encoder/ms-marco-MiniLM-L-6-v2"
+
+#
 top_k = 3
+vector_top_k = 20       # 向量检索召回数（粗排）
+bm25_top_k = 20         # BM25 检索召回数（粗排）
+rerank_top_k = 15       # 送入精排的候选数
+vector_weight = 0.5     # 向量检索权重
+bm25_weight = 0.5       # BM25 检索权重
+final_top_k = 3
 
